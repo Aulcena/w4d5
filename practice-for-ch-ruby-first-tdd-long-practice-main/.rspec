@@ -1,0 +1,4 @@
+--require spec_helper
+-c
+-b
+--format documentation
