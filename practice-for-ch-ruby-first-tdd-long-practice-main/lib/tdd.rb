@@ -1,7 +1,7 @@
 class Array
 
-  def uniq
-
-
+  def my_uniq
+    self.uniq
   end
+
 end

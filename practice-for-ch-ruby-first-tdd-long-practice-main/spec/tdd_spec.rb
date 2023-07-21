@@ -2,16 +2,25 @@ require "rspec"
 require "tdd"
 
 describe Array do
-  subject (:array) {Array.new}
+  let(:array) {Array.new}
+
   describe "#uniq" do
-    it "should accept an array" do
-      arr = [1, 2, 1, 3, 3]
-      #epxect(arr).to be(Ara)
+
+    it "checks if my_uniq exists" do
+      expect(array).to respond_to(:my_uniq)
     end
 
     it "should return a distinct array" do
       array = [1, 2, 1, 3, 3]
-      expect(array.uniq).to eq([1, 2, 3])
+      array.my_uniq
+      expect(array.my_uniq).to eq([1, 2, 3])
+    end
+
+    it "should not mutate the array" do 
+        array = [1, 2, 1, 3, 3]
+        arr_id = array.object_id
+        array.my_uniq
+        expect(arr_id).to eq(array.object_id)
     end
   end
 end
